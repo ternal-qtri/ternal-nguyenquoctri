@@ -7,27 +7,16 @@
     <title>Nguyễn Quốc Trí | Backend Developer</title>
     <meta name="description"
         content="Portfolio của Nguyễn Quốc Trí - Backend Developer chuyên về Java Spring Boot. Biến ý tưởng thành sản phẩm chuyên nghiệp.">
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-    <!-- Custom CSS -->
+    <link rel="icon" href="https://files.svgcdn.io/vscode-icons/file-type-mjml.svg">
     <link rel="stylesheet" href="static/css/style.css">
 </head>
 
@@ -117,13 +106,11 @@
                     <div class="profile-card mx-auto">
                         <div class="scan-line"></div>
                         <div class="image-wrapper before-img">
-                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80"
-                                alt="Lúc nhỏ/Tân sinh viên" class="img-fluid rounded-3">
+                            <img src="static/image/0.jpg" alt="Lúc nhỏ/Tân sinh viên" class="img-fluid rounded-3">
                             <div class="img-label">STUDENT_MODE.exe</div>
                         </div>
                         <div class="image-wrapper after-img">
-                            <img src="https://images.unsplash.com/photo-1537511446984-935f663eb1f4?auto=format&fit=crop&w=600&q=80"
-                                alt="Phiên bản hiện tại" class="img-fluid rounded-3">
+                            <img src="static/image/avatar2.jpg" alt="Phiên bản hiện tại" class="img-fluid rounded-3">
                             <div class="img-label text-highlight">DEV_MODE.exe <i
                                     class="fa-solid fa-check-circle ms-1"></i></div>
                         </div>
@@ -209,7 +196,6 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="section-padding bg-secondary-dark">
         <div class="container">
             <div class="section-header text-center mb-5" data-aos="fade-up">
@@ -218,115 +204,160 @@
             </div>
 
             <div class="row g-4 justify-content-center">
-                <!-- Nhóm Ngôn ngữ -->
                 <div class="col-12 skill-group-wrapper" data-aos="fade-up">
                     <h4 class="skill-category-title mb-4"><i class="fa-solid fa-code me-2"></i>Ngôn ngữ lập trình</h4>
                     <div class="d-flex flex-wrap gap-3">
-                        <div class="skill-card tilt-element"><i class="fa-brands fa-java text-danger"></i>
+                        <div class="skill-card tilt-element">
+                            <img alt="java" class="icon-image" loading="lazy" height="21.6" width="21.6"
+                                src="https://files.svgcdn.io/devicon/java.svg">
                             <span>Java</span>
                         </div>
-                        <div class="skill-card tilt-element"><i class="fa-brands fa-js text-warning"></i>
+                        <div class="skill-card tilt-element">
+                            <img alt="javascript" class="icon-image" loading="lazy" height="21.6" width="21.6"
+                                src="https://files.svgcdn.io/devicon/javascript.svg">
                             <span>JavaScript</span>
                         </div>
-                        <div class="skill-card tilt-element"><i class="fa-solid fa-database text-info"></i>
-                            <span>SQL</span>
-                        </div>
-                        <div class="skill-card tilt-element"><i class="fa-brands fa-html5 text-orange"></i>
-                            <span>HTML</span>
-                        </div>
-                        <div class="skill-card tilt-element"><i class="fa-brands fa-css3-alt text-primary"></i>
-                            <span>CSS</span>
+                        <div class="skill-card tilt-element">
+                            <img src="https://files.svgcdn.io/devicon/typescript.svg" alt="typescript"
+                                class="icon-image" loading="lazy" height="21.6" width="21.6">
+                            <span class="skill-name">TypeScript</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Nhóm Backend -->
                 <div class="col-12 skill-group-wrapper" data-aos="fade-up" data-aos-delay="100">
-                    <h4 class="skill-category-title mb-4 mt-4"><i class="fa-solid fa-server me-2"></i>Backend</h4>
+                    <h4 class="skill-category-title mb-4 mt-4">
+                        <i class="fa-solid fa-server me-2"></i>Backend
+                    </h4>
                     <div class="d-flex flex-wrap gap-3">
-                        <div class="skill-card tilt-element"><i class="fa-solid fa-leaf text-success"></i> <span>Spring
-                                Boot</span></div>
-                        <div class="skill-card tilt-element"><i class="fa-solid fa-leaf text-success"></i> <span>Spring
-                                MVC</span></div>
-                        <div class="skill-card tilt-element"><i class="fa-solid fa-database text-success"></i>
-                            <span>Spring Data JPA</span>
+                        <div class="skill-card tilt-element">
+                            <img alt="tomcat" class="icon-image" loading="lazy" height="21.6" width="21.6"
+                                src="https://files.svgcdn.io/devicon/tomcat.svg">
+                            <span class="skill-name">Servlet</span>
                         </div>
-                        <div class="skill-card tilt-element"><i class="fa-solid fa-table text-secondary"></i>
-                            <span>Hibernate</span>
-                        </div>
-                        <div class="skill-card tilt-element"><i class="fa-solid fa-network-wired text-info"></i>
-                            <span>REST API</span>
-                        </div>
-                        <div class="skill-card tilt-element"><i class="fa-solid fa-key text-warning"></i>
-                            <span>JWT</span>
+                        <div class="skill-card tilt-element">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21.6" height="21.6" viewBox="0 0 24 24">
+                                <path fill="#1ec408"
+                                    d="m23.693 10.706l-4.73-8.185c-.41-.71-1.417-1.294-2.24-1.294h-9.45c-.82 0-1.831.584-2.24 1.294L.306 10.706c-.41.71-.41 1.873 0 2.584l4.725 8.189c.41.71 1.417 1.294 2.24 1.294h9.455c.82 0 1.826-.584 2.24-1.294l4.726-8.19c.41-.71.41-1.873 0-2.583zM10.976 5.755c0-.537.438-.975.974-.975s.975.438.975.975v5.821a.976.976 0 0 1-1.948 0zm.974 12.43a6.616 6.616 0 0 1-6.607-6.609A6.638 6.638 0 0 1 8.01 6.272a.866.866 0 0 1 1.214.18a.866.866 0 0 1-.178 1.213a4.876 4.876 0 0 0 5.812 7.827a4.875 4.875 0 0 0 1.967-3.916a4.897 4.897 0 0 0-1.986-3.925a.87.87 0 0 1-.183-1.214a.87.87 0 0 1 1.214-.183a6.631 6.631 0 0 1 2.687 5.322a6.613 6.613 0 0 1-6.608 6.608z" />
+                            </svg>
+                            <span class="skill-name">Spring Boot</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Nhóm Database & Frontend -->
-                <div class="col-md-6 skill-group-wrapper" data-aos="fade-up" data-aos-delay="200">
-                    <h4 class="skill-category-title mb-4 mt-4"><i class="fa-solid fa-database me-2"></i>Database</h4>
+                <div class="col-12 skill-group-wrapper" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="skill-category-title mb-4 mt-4">
+                        <i class="fa-solid fa-database me-2"></i>Database
+                    </h4>
                     <div class="d-flex flex-wrap gap-3">
-                        <div class="skill-card tilt-element"><i class="fa-solid fa-server text-danger"></i> <span>SQL
-                                Server</span></div>
-                        <div class="skill-card tilt-element"><i class="fa-solid fa-database text-primary"></i>
-                            <span>MySQL</span>
+                        <div class="skill-card tilt-element">
+                            <img alt="postgresql" class="icon-image" loading="lazy" height="21.6" width="21.6"
+                                src="https://files.svgcdn.io/devicon/postgresql.svg">
+                            <span class="skill-name">PostgreSQL</span>
                         </div>
-                        <div class="skill-card tilt-element"><i class="fa-solid fa-database text-info"></i>
-                            <span>PostgreSQL</span>
+                        <div class="skill-card tilt-element">
+                            <img alt="mysql" class="icon-image" loading="lazy" height="21.6" width="21.6"
+                                src="https://files.svgcdn.io/devicon/mysql.svg">
+                            <span class="skill-name">MySQL</span>
+                        </div>
+                        <div class="skill-card tilt-element">
+                            <img alt="microsoftsqlserver" class="icon-image" loading="lazy" height="21.6" width="21.6"
+                                src="https://files.svgcdn.io/devicon/microsoftsqlserver.svg">
+                            <span class="skill-name">SQL Server</span>
+                        </div>
+                        <div class="skill-card tilt-element">
+                            <img alt="mongodb" class="icon-image" loading="lazy" height="21.6" width="21.6"
+                                src="https://files.svgcdn.io/devicon/mongodb.svg">
+                            <span class="skill-name">MongoDB</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-6 skill-group-wrapper" data-aos="fade-up" data-aos-delay="300">
-                    <h4 class="skill-category-title mb-4 mt-4"><i class="fa-solid fa-desktop me-2"></i>Frontend</h4>
+                <div class="col-12 skill-group-wrapper" data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="skill-category-title mb-4 mt-4">
+                        <i class="fa-solid fa-desktop me-2"></i>Frontend
+                    </h4>
                     <div class="d-flex flex-wrap gap-3">
-                        <div class="skill-card tilt-element"><i class="fa-solid fa-leaf text-success"></i>
-                            <span>Thymeleaf</span>
+                        <div class="skill-card tilt-element">
+                            <img alt="bootstrap" class="icon-image" loading="lazy" height="21.6" width="21.6"
+                                src="https://files.svgcdn.io/devicon/bootstrap.svg">
+                            <span class="skill-name">Bootstrap 5</span>
                         </div>
-                        <div class="skill-card tilt-element"><i class="fa-brands fa-bootstrap text-purple"></i>
-                            <span>Bootstrap</span>
+                        <div class="skill-card tilt-element">
+                            <img alt="file-type-jsp" class="icon-image" loading="lazy" height="21.6" width="21.6"
+                                src="https://files.svgcdn.io/vscode-icons/file-type-jsp.svg">
+                            <span class="skill-name">JSP</span>
                         </div>
-                        <div class="skill-card tilt-element"><i class="fa-solid fa-mobile-screen-button text-info"></i>
-                            <span>Responsive Design</span>
+                        <div class="skill-card tilt-element">
+                            <img alt="thymeleaf" class="icon-image" loading="lazy" height="21.6" width="21.6"
+                                src="https://files.svgcdn.io/devicon/thymeleaf.svg">
+                            <span class="skill-name">Thymeleaf</span>
+                        </div>
+                        <div class="skill-card tilt-element">
+                            <img alt="vuejs" class="icon-image" loading="lazy" height="21.6" width="21.6"
+                                src="https://files.svgcdn.io/devicon/vuejs.svg">
+                            <span class="skill-name">Vue</span>
+                        </div>
+                        <div class="skill-card tilt-element">
+                            <img alt="react" class="icon-image" loading="lazy" height="21.6" width="21.6"
+                                src="https://files.svgcdn.io/devicon/react.svg">
+                            <span class="skill-name">React</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Nhóm Tools & Testing -->
-                <div class="col-md-6 skill-group-wrapper" data-aos="fade-up" data-aos-delay="400">
-                    <h4 class="skill-category-title mb-4 mt-4"><i class="fa-solid fa-toolbox me-2"></i>Tools</h4>
+                <div class="col-12 skill-group-wrapper" data-aos="fade-up" data-aos-delay="400">
+                    <h4 class="skill-category-title mb-4 mt-4">
+                        <i class="fa-solid fa-toolbox me-2"></i>Tools
+                    </h4>
                     <div class="d-flex flex-wrap gap-3">
-                        <div class="skill-card tilt-element"><i class="fa-brands fa-git-alt text-orange"></i>
-                            <span>Git</span>
+                        <div class="skill-card tilt-element">
+                            <img alt="github" class="icon-image" loading="lazy" height="21.6" width="21.6"
+                                src="https://files.svgcdn.io/devicon/github.svg">
+                            <span class="skill-name">Git/GitHub</span>
                         </div>
-                        <div class="skill-card tilt-element"><i class="fa-brands fa-github"></i> <span>GitHub</span>
+                        <div class="skill-card tilt-element">
+                            <img alt="dbeaver" class="icon-image" loading="lazy" height="21.6" width="21.6"
+                                src="https://files.svgcdn.io/devicon/dbeaver.svg">
+                            <span class="skill-name">DBeaver</span>
                         </div>
-                        <div class="skill-card tilt-element"><i class="fa-brands fa-docker text-primary"></i>
-                            <span>Docker</span>
+                        <div class="skill-card tilt-element">
+                            <img src="https://files.svgcdn.io/devicon/postman.svg" alt="postman" class="icon-image"
+                                loading="lazy" height="21.6" width="21.6">
+                            <span class="skill-name">Postman</span>
                         </div>
-                        <div class="skill-card tilt-element"><i class="fa-solid fa-rocket text-warning"></i>
-                            <span>Postman</span>
+                        <div class="skill-card tilt-element">
+                            <img alt="swagger" class="icon-image" loading="lazy" height="21.6" width="21.6"
+                                src="https://files.svgcdn.io/devicon/swagger.svg">
+                            <span class="skill-name">Swagger</span>
                         </div>
-                        <div class="skill-card tilt-element"><i class="fa-solid fa-laptop-code text-danger"></i>
-                            <span>IntelliJ IDEA</span>
+                        <div class="skill-card tilt-element">
+                            <img alt="docker" class="icon-image" loading="lazy" height="21.6" width="21.6"
+                                src="https://files.svgcdn.io/devicon/docker.svg">
+                            <span class="skill-name">Docker (Basic)</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-6 skill-group-wrapper" data-aos="fade-up" data-aos-delay="500">
-                    <h4 class="skill-category-title mb-4 mt-4"><i class="fa-solid fa-vial me-2"></i>Testing</h4>
+                <div class="col-12 skill-group-wrapper" data-aos="fade-up" data-aos-delay="500">
+                    <h4 class="skill-category-title mb-4 mt-4">
+                        <i class="fa-solid fa-vial me-2"></i>Testing
+                    </h4>
                     <div class="d-flex flex-wrap gap-3">
-                        <div class="skill-card tilt-element"><i class="fa-solid fa-check-double text-success"></i>
+                        <div class="skill-card tilt-element">
+                            <img alt="junit" class="icon-image" loading="lazy" height="28" width="28"
+                                src="https://files.svgcdn.io/devicon/junit.svg">
                             <span>JUnit</span>
                         </div>
-                        <div class="skill-card tilt-element"><i class="fa-solid fa-mask text-dark"></i>
-                            <span>Mockito</span>
-                        </div>
-                        <div class="skill-card tilt-element"><i class="fa-solid fa-robot text-primary"></i>
+                        <div class="skill-card tilt-element">
+                            <img alt="selenium" class="icon-image" loading="lazy" height="28" width="28"
+                                src="https://files.svgcdn.io/devicon/selenium.svg">
                             <span>Selenium</span>
                         </div>
-                        <div class="skill-card tilt-element"><i class="fa-solid fa-play text-info"></i>
+                        <div class="skill-card tilt-element">
+                            <img alt="playwright" class="icon-image" loading="lazy" height="28" width="28"
+                                src="https://files.svgcdn.io/devicon/playwright.svg">
                             <span>Playwright</span>
                         </div>
                     </div>
