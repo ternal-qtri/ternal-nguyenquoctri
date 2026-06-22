@@ -21,12 +21,9 @@
 </head>
 
 <body>
-
-    <!-- Mouse Follower -->
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
-    <!-- Loading Screen -->
     <div id="loading-screen">
         <div class="loader-content">
             <div class="logo-glitch" data-text="Ternal.NQT">Ternal.NQT</div>
@@ -37,10 +34,8 @@
         </div>
     </div>
 
-    <!-- Matrix Background -->
     <canvas id="matrix-canvas"></canvas>
 
-    <!-- Header -->
     <header id="header" class="fixed-top">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
@@ -76,7 +71,6 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="container h-100 position-relative z-1">
             <div class="row h-100 align-items-center">
@@ -106,7 +100,7 @@
                     <div class="profile-card mx-auto">
                         <div class="scan-line"></div>
                         <div class="image-wrapper before-img">
-                            <img src="static/image/0.jpg" alt="Lúc nhỏ/Tân sinh viên" class="img-fluid rounded-3">
+                            <img src="static/image/avatar1.jpg" alt="Lúc nhỏ/Tân sinh viên" class="img-fluid rounded-3">
                             <div class="img-label">STUDENT_MODE.exe</div>
                         </div>
                         <div class="image-wrapper after-img">
@@ -166,10 +160,12 @@
                         </div>
                         <div class="col-sm-6" data-aos="zoom-in" data-aos-delay="200">
                             <div class="stat-card glass-panel p-4 text-center rounded-4 h-100 tilt-element">
-                                <div class="stat-icon mb-3 text-highlight"><i class="fa-solid fa-code-branch fa-2x"></i>
+                                <div class="stat-icon mb-3 text-highlight">
+                                    <i class="fa-solid fa-code-branch fa-2x"></i>
                                 </div>
-                                <h3 class="stat-number display-5 fw-bold"><span class="counter"
-                                        data-target="6">0</span>+</h3>
+                                <h3 class="stat-number display-5 fw-bold">
+                                    <span class="counter" data-target="5">0</span>+
+                                </h3>
                                 <p class="stat-text mb-0 text-muted">Dự án</p>
                             </div>
                         </div>
@@ -306,15 +302,13 @@
                     </div>
                 </div>
 
-                <!-- Nhóm Tools & Testing -->
                 <div class="col-12 skill-group-wrapper" data-aos="fade-up" data-aos-delay="400">
                     <h4 class="skill-category-title mb-4 mt-4">
                         <i class="fa-solid fa-toolbox me-2"></i>Tools
                     </h4>
                     <div class="d-flex flex-wrap gap-3">
                         <div class="skill-card tilt-element">
-                            <img alt="github" class="icon-image" loading="lazy" height="21.6" width="21.6"
-                                src="https://files.svgcdn.io/devicon/github.svg">
+                            <img alt="git" class="icon-image" loading="lazy" height="21.6" width="21.6" src="https://files.svgcdn.io/devicon/git.svg">
                             <span class="skill-name">Git/GitHub</span>
                         </div>
                         <div class="skill-card tilt-element">
@@ -335,7 +329,7 @@
                         <div class="skill-card tilt-element">
                             <img alt="docker" class="icon-image" loading="lazy" height="21.6" width="21.6"
                                 src="https://files.svgcdn.io/devicon/docker.svg">
-                            <span class="skill-name">Docker (Basic)</span>
+                            <span class="skill-name">Docker</span>
                         </div>
                     </div>
                 </div>
@@ -366,7 +360,6 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="section-padding">
         <div class="container">
             <div class="section-header text-center mb-5" data-aos="fade-up">
@@ -375,33 +368,32 @@
             </div>
 
             <div class="row g-4">
-                <!-- Project 1 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-card tilt-element" data-project-id="1">
                         <div class="project-img">
-                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80"
-                                alt="Cafe POS System" class="img-fluid">
+                            <img src="static/image/project1.png"
+                                alt="TernalTech E-Commerce Website" class="img-fluid">
                             <div class="project-overlay">
                                 <button class="btn btn-primary-custom btn-view-project"><i
                                         class="fa-solid fa-eye me-2"></i>Xem chi tiết</button>
                             </div>
                         </div>
                         <div class="project-content glass-panel">
-                            <h4 class="project-title">Cafe POS System</h4>
-                            <p class="project-desc">Hệ thống quản lý điểm bán hàng cho quán cafe với các tính năng quản
-                                lý bàn, order, thanh toán và báo cáo doanh thu.</p>
+                            <h4 class="project-title">TernalTech E-Commerce Website</h4>
+                            <p class="project-desc">Ứng dụng web thương mại điện tử được phát triển theo kiến trúc MVC
+                                với đầy đủ chức năng mua sắm, quản lý sản phẩm, giỏ hàng, đơn hàng và hệ thống quản trị
+                                dành cho quản trị viên.</p>
                             <div class="project-tech">
-                                <span>Java Swing</span><span>SQL Server</span><span>JDBC</span>
+                                <span>Spring Boot</span><span>Thymeleaf</span><span>Spring Data JPA</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card tilt-element" data-project-id="2">
                         <div class="project-img">
-                            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80"
+                            <img src="static/image/project2.png"
                                 alt="Chat RealTime" class="img-fluid">
                             <div class="project-overlay">
                                 <button class="btn btn-primary-custom btn-view-project"><i
@@ -409,99 +401,71 @@
                             </div>
                         </div>
                         <div class="project-content glass-panel">
-                            <h4 class="project-title">Chat RealTime App</h4>
-                            <p class="project-desc">Ứng dụng nhắn tin thời gian thực hỗ trợ chat cá nhân, chat nhóm, gửi
-                                hình ảnh và trạng thái online.</p>
+                            <h4 class="project-title">Blog Web Frontend</h4>
+                            <p class="project-desc">Ứng dụng Front-end được phát triển theo mô hình Single Page Application (SPA), áp dụng Vue 3 Composition API kết hợp Bootstrap 5 để xây dựng giao diện hiện đại, responsive và quản lý trạng thái dữ liệu hiệu quả.</p>
                             <div class="project-tech">
-                                <span>Spring Boot</span><span>WebSocket</span><span>MySQL</span>
+                                <span>Vue 3</span><span>Bootstrap</span><span>Pinia</span><span>Vue Router</span><span>Axios</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-card tilt-element" data-project-id="3">
                         <div class="project-img">
-                            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=80"
-                                alt="Laptop E-Commerce" class="img-fluid">
+                            <img src="static/image/project3.png"
+                                alt="Online Entertainment Website" class="img-fluid">
                             <div class="project-overlay">
                                 <button class="btn btn-primary-custom btn-view-project"><i
                                         class="fa-solid fa-eye me-2"></i>Xem chi tiết</button>
                             </div>
                         </div>
                         <div class="project-content glass-panel">
-                            <h4 class="project-title">Laptop E-Commerce</h4>
-                            <p class="project-desc">Website thương mại điện tử bán laptop với đầy đủ quy trình mua hàng,
-                                giỏ hàng, thanh toán VNPAY.</p>
+                            <h4 class="project-title">Online Entertainment Website</h4>
+                            <p class="project-desc">Ứng dụng web quản lý và chia sẻ video trực tuyến, được xây dựng theo mô hình MVC với hệ thống xác thực, phân quyền và quản trị nội dung.</p>
                             <div class="project-tech">
-                                <span>Spring MVC</span><span>Thymeleaf</span><span>VNPAY API</span>
+                                <span>JSP/Servlet</span><span>JPA/Hibernate</span><span>SQL Server</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 4 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
                     <div class="project-card tilt-element" data-project-id="4">
                         <div class="project-img">
-                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80"
-                                alt="Student Management" class="img-fluid">
+                            <img src="static/image/project4.png"
+                                alt="PolyPress - News Management System" class="img-fluid">
                             <div class="project-overlay">
                                 <button class="btn btn-primary-custom btn-view-project"><i
                                         class="fa-solid fa-eye me-2"></i>Xem chi tiết</button>
                             </div>
                         </div>
                         <div class="project-content glass-panel">
-                            <h4 class="project-title">Student Management</h4>
-                            <p class="project-desc">Hệ thống quản lý sinh viên, điểm số, lớp học và điểm danh danh cho
-                                trung tâm đào tạo.</p>
+                            <h4 class="project-title">PolyPress - News Management System</h4>
+                            <p class="project-desc">Hệ thống quản lý tin tức (CMS) được phát triển theo mô hình MVC, cho phép quản lý bài viết, danh mục, người dùng và bản tin điện tử với cơ chế phân quyền dành cho quản trị viên và phóng viên.</p>
                             <div class="project-tech">
-                                <span>Spring Data JPA</span><span>REST API</span><span>PostgreSQL</span>
+                                <span>JSP/Servlet</span><span>MySQL</span><span>JDBC</span><span>HikariCP</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 5 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
                     <div class="project-card tilt-element" data-project-id="5">
                         <div class="project-img">
-                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80"
-                                alt="Inventory Management" class="img-fluid">
+                            <img src="static/image/project5.png"
+                                alt="Phần Mềm Quản Lý Tạp Hóa" class="img-fluid">
                             <div class="project-overlay">
-                                <button class="btn btn-primary-custom btn-view-project"><i
-                                        class="fa-solid fa-eye me-2"></i>Xem chi tiết</button>
+                                <button class="btn btn-primary-custom btn-view-project">
+                                    <i class="fa-solid fa-eye me-2"></i>Xem chi tiết
+                                </button>
                             </div>
                         </div>
                         <div class="project-content glass-panel">
-                            <h4 class="project-title">Inventory Management</h4>
-                            <p class="project-desc">Phần mềm quản lý kho hàng hóa, nhập xuất tồn, cảnh báo tồn kho tối
-                                thiểu, in mã vạch.</p>
+                            <h4 class="project-title">Phần Mềm Quản Lý Tạp Hóa</h4>
+                            <p class="project-desc">Phần mềm quản lý cửa hàng tạp hóa được phát triển theo mô hình Desktop Application nhằm hỗ trợ quản lý sản phẩm, nhân viên, hóa đơn và hoạt động bán hàng. Dự án được thực hiện theo hình thức làm việc nhóm, mô phỏng quy trình vận hành của một cửa hàng bán lẻ thực tế.</p>
                             <div class="project-tech">
-                                <span>Java Core</span><span>Hibernate</span><span>MySQL</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                    <div class="project-card tilt-element" data-project-id="6">
-                        <div class="project-img">
-                            <img src="https://images.unsplash.com/photo-1507238692062-71c1bd02a829?auto=format&fit=crop&w=600&q=80"
-                                alt="Personal Portfolio" class="img-fluid">
-                            <div class="project-overlay">
-                                <button class="btn btn-primary-custom btn-view-project"><i
-                                        class="fa-solid fa-eye me-2"></i>Xem chi tiết</button>
-                            </div>
-                        </div>
-                        <div class="project-content glass-panel">
-                            <h4 class="project-title">Personal Portfolio</h4>
-                            <p class="project-desc">Website portfolio cá nhân hiển thị kỹ năng, dự án và thông tin liên
-                                hệ. Áp dụng các hiệu ứng animation mượt mà.</p>
-                            <div class="project-tech">
-                                <span>HTML/CSS</span><span>JavaScript</span><span>GSAP</span>
+                                <span>Java Swing</span><span>SQL Server</span><span>JDBC</span>
                             </div>
                         </div>
                     </div>
@@ -510,9 +474,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="section-padding bg-secondary-dark position-relative">
-        <!-- Decoration -->
         <div class="glow-bg" style="top: 20%; left: 10%; background: var(--primary-color);"></div>
         <div class="glow-bg" style="bottom: 20%; right: 10%; background: var(--highlight-color);"></div>
 
@@ -563,12 +525,12 @@
 
                         <h6 class="mb-3">Mạng xã hội</h6>
                         <div class="social-links d-flex gap-3">
-                            <a href="https://facebook.com/qtri12th9" target="_blank" class="social-icon"
-                                aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="https://github.com/ternal-qtri" target="_blank" class="social-icon"
-                                aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                            <a href="#" target="_blank" class="social-icon" aria-label="LinkedIn"><i
-                                    class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://github.com/ternal-qtri" target="_blank" class="social-icon" aria-label="GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="#" target="_blank" class="social-icon" aria-label="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -613,6 +575,7 @@
                             <input type="hidden" name="_subject" value="Tin nhắn từ Portfolio">
                             <input type="hidden" name="_captcha" value="false">
                             <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_next" value="https://ternal-nguyenquoctri.io.vn/#contact">
                             <div class="col-12">
                                 <button class="btn btn-primary-custom w-100 py-3 mt-2" type="submit">
                                     <span>Gửi tin nhắn</span> <i class="fa-solid fa-paper-plane ms-2"></i>
@@ -625,22 +588,18 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer py-4 text-center">
         <div class="container">
-            <h3 class="logo-font mb-2">&lt;NT/&gt;</h3>
+            <h3 class="logo-font mb-2">&lt;Ternal-NQT/&gt;</h3>
             <p class="text-accent mb-3">Nguyễn Quốc Trí - Backend Developer</p>
             <div class="social-links d-flex justify-content-center gap-3 mb-4">
-                <a href="https://facebook.com/qtri12th9" target="_blank" class="social-icon"><i
-                        class="fa-brands fa-facebook-f"></i></a>
                 <a href="https://github.com/ternal-qtri" target="_blank" class="social-icon"><i
                         class="fa-brands fa-github"></i></a>
             </div>
-            <p class="text-muted mb-0 small">&copy; 2026 Nguyễn Quốc Trí. All Rights Reserved.</p>
+            <p class="text-muted mb-0 small">&copy; 2026 Nguyễn Quốc Trí.</p>
         </div>
     </footer>
 
-    <!-- Project Modal (Trống, được điền bằng JS) -->
     <div id="project-modal" class="custom-modal">
         <div class="custom-modal-overlay"></div>
         <div class="custom-modal-content glass-panel">

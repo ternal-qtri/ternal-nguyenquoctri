@@ -1,34 +1,27 @@
-/**
- * Main JavaScript File for Portfolio
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. Loading Screen & Init
+
     const loadingScreen = document.getElementById('loading-screen');
     const loadingBar = document.querySelector('.loading-bar');
-    
-    // Simulate loading progress
+
     let progress = 0;
     const interval = setInterval(() => {
         progress += Math.random() * 20;
         if (progress > 100) progress = 100;
         loadingBar.style.width = `${progress}%`;
-        
+
         if (progress === 100) {
             clearInterval(interval);
             setTimeout(() => {
                 loadingScreen.style.opacity = '0';
                 loadingScreen.style.visibility = 'hidden';
                 initAnimations();
-            }, 800);
+            }, 100);//800
         }
-    }, 200);
+    }, 50);//100
 
-    // 2. Custom Mouse Cursor
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
-    
+
     if (window.innerWidth > 768 && cursorDot && cursorOutline) {
         window.addEventListener('mousemove', (e) => {
             const posX = e.clientX;
@@ -37,14 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
             cursorDot.style.left = `${posX}px`;
             cursorDot.style.top = `${posY}px`;
 
-            // Adding a small delay to outline for smooth effect
             cursorOutline.animate({
                 left: `${posX}px`,
                 top: `${posY}px`
             }, { duration: 150, fill: "forwards" });
         });
 
-        // Hover effect on interactive elements
         const interactives = document.querySelectorAll('a, button, .project-card, .skill-card, .stat-card');
         interactives.forEach(el => {
             el.addEventListener('mouseenter', () => {
@@ -58,12 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Dark/Light Mode Toggle
     const themeToggle = document.getElementById('theme-toggle');
     const htmlEl = document.documentElement;
     const themeIcon = themeToggle.querySelector('i');
-    
-    // Check local storage
+
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         htmlEl.setAttribute('data-theme', savedTheme);
@@ -73,13 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggle.addEventListener('click', () => {
         const currentTheme = htmlEl.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
+
         htmlEl.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         updateThemeIcon(newTheme);
-        
-        // Re-init particles if color changes heavily, but particles.js might need a full reload to change colors well. 
-        // For simplicity, we keep particle config neutral or re-init here.
     });
 
     function updateThemeIcon(theme) {
@@ -92,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 4. Header Scroll Effect
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -102,10 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Active link based on scroll section
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     window.addEventListener('scroll', () => {
         let current = '';
         sections.forEach(section => {
@@ -124,9 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 5. Initialize Animations & Libraries
     function initAnimations() {
-        // AOS for basic reveal
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
@@ -134,10 +116,8 @@ document.addEventListener('DOMContentLoaded', () => {
             mirror: false
         });
 
-        // GSAP ScrollTrigger Parallax & Text Reveal
         gsap.registerPlugin(ScrollTrigger);
 
-        // Parallax background elements
         gsap.utils.toArray('.glow-bg').forEach(bg => {
             gsap.to(bg, {
                 yPercent: 50,
@@ -151,7 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Text Split Animation (GSAP)
         const titles = document.querySelectorAll('.section-header .title');
         titles.forEach(title => {
             const text = title.innerText;
@@ -178,13 +157,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Typed.js
         if (document.getElementById('typed-text')) {
             new Typed('#typed-text', {
                 strings: [
                     'Java Developer',
                     'Spring Boot Developer',
-                    'Backend Engineer',
+                    'Backend Developer',
                     'Problem Solver',
                     'Software Developer'
                 ],
@@ -195,7 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Counter Animation
         const counters = document.querySelectorAll('.counter');
         counters.forEach(counter => {
             counter.innerText = '0';
@@ -212,9 +189,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             };
 
-            // Trigger when visible using Intersection Observer
             const observer = new IntersectionObserver((entries) => {
-                if(entries[0].isIntersecting) {
+                if (entries[0].isIntersecting) {
                     updateCounter();
                     observer.disconnect();
                 }
@@ -222,36 +198,33 @@ document.addEventListener('DOMContentLoaded', () => {
             observer.observe(counter);
         });
 
-        // Hero Transition Effect (GSAP TV Glitch)
-        const tl = gsap.timeline({ delay: 1.5 }); // Wait for loading screen
+        const tl = gsap.timeline({ delay: 1.5 });
         const beforeImg = document.querySelector('.before-img');
         const afterImg = document.querySelector('.after-img');
         const scanLine = document.querySelector('.scan-line');
-        
-        tl.call(() => {
-              beforeImg.classList.add('glitch-active');
-              scanLine.style.opacity = 1;
-              scanLine.style.height = '100%';
-              scanLine.style.background = 'rgba(255,255,255,0.2)';
-          })
-          .to('.profile-card', { x: -10, y: 5, duration: 0.05, yoyo: true, repeat: 3 })
-          .call(() => {
-              beforeImg.classList.remove('glitch-active');
-              beforeImg.style.opacity = 0;
-              afterImg.classList.add('glitch-active');
-              afterImg.style.opacity = 1;
-          })
-          .to('.profile-card', { x: 10, y: -5, duration: 0.05, yoyo: true, repeat: 3 })
-          .call(() => {
-              afterImg.classList.remove('glitch-active');
-              scanLine.style.opacity = 0;
-              gsap.to('.profile-card', { x: 0, y: 0, duration: 0.1 });
-          });
 
-        // Matrix Background Init
+        tl.call(() => {
+            beforeImg.classList.add('glitch-active');
+            scanLine.style.opacity = 1;
+            scanLine.style.height = '100%';
+            scanLine.style.background = 'rgba(255,255,255,0.2)';
+        })
+            .to('.profile-card', { x: -10, y: 5, duration: 0.05, yoyo: true, repeat: 3 })
+            .call(() => {
+                beforeImg.classList.remove('glitch-active');
+                beforeImg.style.opacity = 0;
+                afterImg.classList.add('glitch-active');
+                afterImg.style.opacity = 1;
+            })
+            .to('.profile-card', { x: 10, y: -5, duration: 0.05, yoyo: true, repeat: 3 })
+            .call(() => {
+                afterImg.classList.remove('glitch-active');
+                scanLine.style.opacity = 0;
+                gsap.to('.profile-card', { x: 0, y: 0, duration: 0.1 });
+            });
+
         initMatrixBg();
 
-        // Vanilla Tilt Init
         VanillaTilt.init(document.querySelectorAll(".tilt-element"), {
             max: 15,
             speed: 400,
@@ -261,50 +234,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. Project Modal Logic
     const projectsData = {
         1: {
-            title: "Cafe POS System",
+            title: "TernalTech E-Commerce Website",
             role: "Backend Developer",
-            time: "01/2025 - 03/2025",
-            github: "https://github.com/ternal-qtri/cafe-pos",
-            img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
-            desc: "Phần mềm quản lý bán hàng cho quán Cafe, hỗ trợ đặt món tại bàn, mang đi, in hóa đơn và báo cáo thống kê trực quan.",
-            tech: ["Java Swing", "SQL Server", "JDBC", "JasperReports"],
-            features: ["Quản lý bàn và khu vực", "Order món, thanh toán", "In hóa đơn", "Báo cáo doanh thu theo ngày/tháng", "Quản lý kho nguyên liệu"],
-            challenges: "Xử lý logic tính tiền phức tạp với nhiều loại mã giảm giá và đồng bộ dữ liệu thời gian thực giữa các máy trạm.",
-            lessons: "Hiểu sâu về cấu trúc hệ thống POS, tối ưu hóa truy vấn SQL Server để tăng tốc độ lấy báo cáo."
+            time: "05/2026 – 06/2026",
+            github: "https://github.com/ternal-qtri/TernalTech-ECommerce-Website",
+            img: "static/image/project1.png",
+            desc: "Ứng dụng web thương mại điện tử được phát triển theo kiến trúc MVC với đầy đủ chức năng mua sắm, quản lý sản phẩm, giỏ hàng, đơn hàng và hệ thống quản trị dành cho quản trị viên.",
+            tech: ["Spring Boot", "Thymeleaf", "SQL Server", "Spring Data JPA", "Bootstrap"],
+            features: ["Quản lý sản phẩm và danh mục", "Giỏ hàng và đặt hàng", "Phân quyền người dùng", "Quản lý đơn hàng", "Tìm kiếm và lọc sản phẩm", "Gửi email tự động"],
+            challenges: "Lần đầu làm dự án với một framework mới. Thiết kế quan hệ dữ liệu giữa Product, Category, Order và User bằng JPA. Đồng bộ dữ liệu giỏ hàng và đơn hàng khi người dùng thao tác liên tục.",
+            lessons: "Nâng cao kiến thức về Spring Boot, Spring MVC, Spring Data JPA, Thymeleaf, Interceptor và quy trình phát triển ứng dụng web hoàn chỉnh từ phân tích yêu cầu đến triển khai và kiểm thử."
         },
         2: {
-            title: "Chat RealTime App",
-            role: "Fullstack Developer",
-            time: "04/2025 - 05/2025",
-            github: "https://github.com/ternal-qtri/chat-app",
-            img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80",
-            desc: "Ứng dụng nhắn tin thời gian thực hỗ trợ chat cá nhân, chat nhóm, gửi hình ảnh và hiển thị trạng thái online/offline.",
-            tech: ["Spring Boot", "WebSocket", "STOMP", "MySQL", "ReactJS"],
-            features: ["Đăng nhập/Đăng ký JWT", "Chat cá nhân và Group", "Gửi hình ảnh và file", "Trạng thái Typing & Online"],
-            challenges: "Quản lý các kết nối WebSocket, xử lý ngắt kết nối đột ngột và lưu trữ tin nhắn lượng lớn.",
-            lessons: "Nắm vững kỹ thuật WebSocket, cơ chế pub/sub, tối ưu hóa database cho ứng dụng messaging."
+            title: "Blog Web Frontend",
+            role: "Frontend Developer",
+            time: "03/2026 – 04/2026",
+            github: "https://github.com/ternal-qtri/Blog-Web-Frontend",
+            img: "static/image/project2.png",
+            desc: "Ứng dụng Front-end được phát triển theo mô hình Single Page Application (SPA), áp dụng Vue 3 Composition API kết hợp Bootstrap 5 để xây dựng giao diện hiện đại, responsive và quản lý trạng thái dữ liệu hiệu quả.",
+            tech: ["Vue 3", "Vite", "Bootstrap 5", "Pinia", "Vue Router", "Axios"],
+            features: ["Điều hướng SPA", "Quản lý trạng thái tập trung", "Tương tác API", "Thông báo người dùng", "Responsive Design"],
+            challenges: "Quản lý state giữa nhiều component bằng Pinia. Xử lý bất đồng bộ khi gọi API. Tổ chức cấu trúc dự án theo hướng component tái sử dụng.",
+            lessons: "Thành thạo Vue 3 Composition API, Vue Router, Pinia, Axios và Bootstrap 5; hiểu quy trình phát triển ứng dụng SPA, quản lý state, tổ chức component và tích hợp API trong môi trường Front-end hiện đại."
         },
         3: {
-            title: "Laptop E-Commerce",
+            title: "Online Entertainment Website",
             role: "Backend Developer",
-            time: "06/2025 - 08/2025",
-            github: "https://github.com/ternal-qtri/laptop-shop",
-            img: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=80",
-            desc: "Website thương mại điện tử chuyên cung cấp các dòng laptop, với đầy đủ tính năng giỏ hàng, thanh toán online.",
-            tech: ["Spring MVC", "Thymeleaf", "Spring Data JPA", "VNPAY API", "MySQL"],
-            features: ["Quản lý sản phẩm, danh mục", "Tìm kiếm, lọc sản phẩm", "Giỏ hàng", "Thanh toán VNPAY", "Admin Dashboard"],
-            challenges: "Tích hợp cổng thanh toán VNPAY an toàn, bảo mật thông tin đơn hàng và chống trùng lặp thanh toán.",
-            lessons: "Kinh nghiệm làm việc với Payment Gateway API của bên thứ ba, bảo mật ứng dụng web."
+            time: "11/2025 – 12/2025",
+            github: "https://github.com/ternal-qtri/Online-Entertainment-Website",
+            img: "static/image/project3.png",
+            desc: "Ứng dụng web quản lý và chia sẻ video trực tuyến, được xây dựng theo mô hình MVC với hệ thống xác thực, phân quyền và quản trị nội dung.",
+            tech: ["JSP/Servlet", "JPA/Hibernate", "SQL Server", "Bootstrap"],
+            features: ["Đăng ký và đăng nhập tài khoản", "Xem và quản lý video", "Danh sách yêu thích", "Chia sẻ video qua Email", "Quản lý người dùng và nội dung video", "Báo cáo thống kê"],
+            challenges: "Thiết kế mô hình dữ liệu quan hệ bằng Hibernate JPA. Quản lý xác thực và phân quyền người dùng. Tích hợp gửi email tự động",
+            lessons: "Củng cố kiến thức về Java Web, JPA, SQL Server và quy trình phát triển ứng dụng web hoàn chỉnh từ phân tích yêu cầu, thiết kế cơ sở dữ liệu đến triển khai chức năng và kiểm thử hệ thống."
         },
         4: {
             title: "Student Management",
             role: "Backend Developer",
             time: "09/2025 - 10/2025",
             github: "https://github.com/ternal-qtri/student-management",
-            img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
+            img: "static/image/project4.png",
             desc: "Hệ thống quản lý sinh viên dành cho trung tâm đào tạo lập trình, quản lý điểm số, lớp học, điểm danh.",
             tech: ["Spring Boot", "REST API", "PostgreSQL", "Swagger", "Docker"],
             features: ["CRUD Sinh viên, Lớp học", "Quản lý điểm số", "Điểm danh hàng ngày", "Export Excel báo cáo"],
@@ -312,16 +284,16 @@ document.addEventListener('DOMContentLoaded', () => {
             lessons: "Quy chuẩn thiết kế API, viết Document API với Swagger, triển khai bằng Docker."
         },
         5: {
-            title: "Inventory Management",
+            title: "Phần Mềm Quản Lý Tạp Hóa",
             role: "Developer",
-            time: "11/2025 - 12/2025",
-            github: "https://github.com/ternal-qtri/inventory",
-            img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
-            desc: "Phần mềm quản lý kho hàng hóa, kiểm soát nhập/xuất/tồn, cảnh báo sản phẩm sắp hết.",
-            tech: ["Java Core", "Hibernate", "MySQL", "Maven"],
-            features: ["Quản lý nhà cung cấp", "Nhập/Xuất kho", "Tính giá vốn FIFO/LIFO", "Cảnh báo tồn kho"],
-            challenges: "Xây dựng thuật toán tính giá vốn tự động chính xác theo phương pháp FIFO.",
-            lessons: "Củng cố Java Core, OOP, làm quen sâu với ORM Hibernate."
+            time: "06/2025 – 08/2025",
+            github: "https://github.com/ternal-qtri/UngDungQuanLyTapHoa",
+            img: "static/image/project5.png",
+            desc: "Phần mềm quản lý cửa hàng tạp hóa được phát triển theo mô hình Desktop Application nhằm hỗ trợ quản lý sản phẩm, nhân viên, hóa đơn và hoạt động bán hàng. Dự án được thực hiện theo hình thức làm việc nhóm, mô phỏng quy trình vận hành của một cửa hàng bán lẻ thực tế.",
+            tech: ["Java Swing", "JDBC", "SQL Server", "Maven"],
+            features: ["Đăng nhập và phân quyền", "Xử lý bán hàng", "Nhập kho sản phẩm", "Quản lý danh mục, sản phẩm, nhân viên", "Báo cáo, thống kê doanh thu theo đơn hàng"],
+            challenges: "Thiết kế cơ sở dữ liệu cho nghiệp vụ bán hàng. Xử lý giao diện Desktop bằng Java Swing. Quản lý tồn kho theo thời gian thực. Làm việc nhóm và quản lý tiến độ dự án.",
+            lessons: "Nâng cao kỹ năng làm việc nhóm, phân chia công việc, quản lý tiến độ dự án và phát triển ứng dụng Java Desktop kết nối với SQL Server."
         },
         6: {
             title: "Personal Portfolio",
@@ -344,14 +316,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectBtns = document.querySelectorAll('.btn-view-project');
 
     projectBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
+        btn.addEventListener('click', function (e) {
             e.preventDefault();
             const card = this.closest('.project-card');
             const projectId = card.getAttribute('data-project-id');
             const data = projectsData[projectId];
-            
+
             if (data) {
-                // Populate Modal Data
                 const techBadges = data.tech.map(t => `<span class="badge bg-primary-custom me-2 mb-2 px-3 py-2">${t}</span>`).join('');
                 const featureList = data.features.map(f => `<li><i class="fa-solid fa-check text-success me-2"></i>${f}</li>`).join('');
 
@@ -398,11 +369,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 `;
 
-                // Open Modal with Animation
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
-                
-                gsap.fromTo(modalContent, 
+
+                gsap.fromTo(modalContent,
                     { y: 50, opacity: 0, scale: 0.95 },
                     { y: 0, opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.5)" }
                 );
@@ -411,8 +381,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const closeModal = () => {
-        gsap.to(modalContent, { 
-            y: 50, opacity: 0, scale: 0.95, duration: 0.3, 
+        gsap.to(modalContent, {
+            y: 50, opacity: 0, scale: 0.95, duration: 0.3,
             onComplete: () => {
                 modal.classList.remove('active');
                 document.body.style.overflow = 'auto';
@@ -421,30 +391,27 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     closeModalBtn.addEventListener('click', closeModal);
-    
-    // Close on overlay click
+
     modal.addEventListener('click', (e) => {
         if (e.target.classList.contains('custom-modal-overlay')) {
             closeModal();
         }
     });
-    
-    // Form submit prevention for visual demo
+
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+        contactForm.addEventListener('submit', () => {
             const btn = contactForm.querySelector('button[type="submit"]');
             const originalText = btn.innerHTML;
-            
+
             btn.innerHTML = '<span>Đang gửi...</span> <i class="fa-solid fa-spinner fa-spin ms-2"></i>';
             btn.disabled = true;
-            
+
             setTimeout(() => {
                 btn.innerHTML = '<span>Đã gửi thành công!</span> <i class="fa-solid fa-check ms-2"></i>';
                 btn.classList.replace('btn-primary-custom', 'btn-success');
                 contactForm.reset();
-                
+
                 setTimeout(() => {
                     btn.innerHTML = originalText;
                     btn.classList.replace('btn-success', 'btn-primary-custom');
@@ -454,7 +421,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Matrix Background Animation function
     function initMatrixBg() {
         const canvas = document.getElementById('matrix-canvas');
         if (!canvas) return;
@@ -469,12 +435,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const drops = [];
 
         for (let x = 0; x < columns; x++) {
-            drops[x] = Math.random() * canvas.height / fontSize; // random start position
+            drops[x] = Math.random() * canvas.height / fontSize;
         }
 
         function draw() {
-            // Translucent black background to create trail effect
-            ctx.fillStyle = 'rgba(2, 6, 23, 0.1)'; 
+            ctx.fillStyle = 'rgba(2, 6, 23, 0.1)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             const isLightMode = document.documentElement.getAttribute('data-theme') === 'light';
